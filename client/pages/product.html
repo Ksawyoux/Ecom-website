@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHOP.CO - Product details page. View size, color and pricing information.">
+  <title>Product Details - SHOP.CO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/product.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      Sign up and get 20% off to your first order.
+      <a href="#signup" style="color: white; text-decoration: underline; margin-left: 10px;">Sign Up Now</a>
+    </div>
+
+    <div class="header-main">
+      <div class="logo">SHOP.CO</div>
+
+      <nav>
+        <a href="index.html">Shop</a>
+        <a href="#on-sale">On Sale</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#brands">Brands</a>
+      </nav>
+
+      <div class="search-bar">
+        <span class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="M21 21l-4.35-4.35"></path>
+          </svg>
+        </span>
+        <input type="text" placeholder="Search for products..." id="searchInput">
+      </div>
+
+      <div class="header-actions" id="headerActions"></div>
+
+      <div class="header-icons">
+        <button class="icon-btn" id="cartBtn" title="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+            <path d="M6 6h15l-1.5 9h-13z"></path>
+            <path d="M6 6l-2-2H1"></path>
+            <circle cx="9" cy="20" r="1"></circle>
+            <circle cx="19" cy="20" r="1"></circle>
+          </svg>
+          <span class="cart-count" id="cartCount" style="display: none;">0</span>
+        </button>
+        <button class="icon-btn" id="userBtn" title="User Account">
+          <div class="user-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+              <path d="M20 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M4 21v-2a4 4 0 0 1 3-3.87"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div style="padding: 20px 40px;">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>></span>
+      <a href="index.html">Shop</a>
+      <span>></span>
+      <a href="index.html">Men</a>
+      <span>></span>
+      <span id="breadcrumbProduct">T-Shirts</span>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <main class="product-details-container">
+    <!-- Product Gallery -->
+    <div class="product-gallery">
+      <div class="gallery-main">
+        <img id="galleryMainImage" src="../assets/images/gradient-tshirt.jfif" alt="Product">
+      </div>
+      <div class="gallery-thumbnails" id="galleryThumbnails">
+        <!-- Thumbnails will be dynamically generated -->
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info-section">
+      <div class="product-header">
+        <h1 class="product-title" id="productTitle">Product Title</h1>
+
+        <div class="product-rating-section">
+          <div class="stars" id="productStars">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+            </svg>
+          </div>
+          <span class="rating-text"><span id="ratingValue">4.5</span>/5</span>
+          <span class="reviews-link" id="reviewsLink">(458 reviews)</span>
+        </div>
+
+        <div class="product-price-section">
+          <div class="price-display">
+            <span class="current-price-large" id="currentPrice">$260</span>
+            <span class="original-price-large" id="originalPrice">$300</span>
+            <span class="discount-percentage" id="discountPercentage">-40%</span>
+          </div>
+        </div>
+
+        <p class="product-description" id="productDescription">
+          This graphic t-shirt is perfect for any occasion. Crafted from soft, breathable cotton, it's the ideal choice
+          for stay effortlessly stylish.
+        </p>
+      </div>
+
+      <!-- Product Options -->
+      <div class="product-options">
+        <!-- Select Colors -->
+        <div class="option-group">
+          <label class="option-label">Select Colors</label>
+          <div class="color-options" id="colorOptions">
+            <div class="color-option" style="background-color: #2d2d2d;" data-color="black" title="Black"></div>
+            <div class="color-option" style="background-color: #1f8f46;" data-color="green" title="Green"></div>
+            <div class="color-option" style="background-color: #1e3a8a;" data-color="blue" title="Blue"></div>
+          </div>
+        </div>
+
+        <!-- Choose Size -->
+        <div class="option-group">
+          <label class="option-label">Choose Size</label>
+          <div class="size-options" id="sizeOptions">
+            <button class="size-option" data-size="small">Small</button>
+            <button class="size-option" data-size="medium">Medium</button>
+            <button class="size-option" data-size="large">Large</button>
+            <button class="size-option" data-size="xl">X-Large</button>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="quantity-selector">
+          <label class="quantity-label">Quantity</label>
+          <div class="quantity-input">
+            <button type="button" id="decreaseQty">−</button>
+            <input type="number" id="quantityInput" value="1" min="1">
+            <button type="button" id="increaseQty">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="product-actions">
+        <button class="btn-add-to-cart" id="addToCartBtn">Add to Cart</button>
+        <button class="btn-wishlist" id="wishlistBtn" title="Add to Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Shipping Info -->
+      <div class="shipping-info">
+        <div>
+          <span class="shipping-label">Free Delivery</span>
+          <span>Applies to orders of $50 or more</span>
+        </div>
+        <div>
+          <span class="shipping-label">Return Policy</span>
+          <span>Free 30-day return policy</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Product Tabs -->
+  <section class="section">
+    <div class="product-tabs">
+      <div class="tabs-header">
+        <button class="tab-button active" data-tab="details">Product Details</button>
+        <button class="tab-button" data-tab="ratings">Rating & Reviews</button>
+        <button class="tab-button" data-tab="faqs">FAQs</button>
+      </div>
+
+      <!-- Details Tab -->
+      <div class="tab-content active" id="details">
+        <h3 style="margin-bottom: 15px;">Product Details</h3>
+        <p id="detailsContent" style="color: var(--text-light); line-height: 1.8;">
+          This product is crafted with precision and care to ensure the highest quality. Made from premium materials, it
+          offers comfort and style for everyday wear.
+        </p>
+      </div>
+
+      <!-- Reviews Tab -->
+      <div class="tab-content" id="ratings">
+        <div class="reviews-section">
+          <div class="reviews-header">
+            <h3 class="reviews-title">All Reviews <span style="color: var(--text-light); font-weight: 400;">(458)</span>
+            </h3>
+            <div class="reviews-sort">
+              <button class="write-review-btn" id="writeReviewBtn">Write a Review</button>
+            </div>
+          </div>
+
+          <div id="reviewsList">
+            <!-- Reviews will be dynamically loaded here -->
+            <div class="review-item">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">S</div>
+                  <div>
+                    <div class="reviewer-name">
+                      Samantha D.
+                      <span class="reviewer-badge">✓</span>
+                    </div>
+                    <div class="review-date">Posted on August 14, 2023</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+              </div>
+              <p class="review-text">
+                "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+                designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+              </p>
+              <div class="review-actions">
+                <span class="review-action"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16"
+                    height="16">
+                    <path d="M14 9V5a3 3 0 0 0-6 0v4"></path>
+                    <path d="M4 9h4l2 11h4l2-11h4"></path>
+                  </svg> Helpful</span>
+                <span class="review-action"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16"
+                    height="16">
+                    <path d="M10 15v4a3 3 0 0 0 6 0v-4"></path>
+                    <path d="M20 15h-4l-2-11h-4l-2 11H4"></path>
+                  </svg> Not helpful</span>
+              </div>
+            </div>
+
+            <div class="review-item">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">A</div>
+                  <div>
+                    <div class="reviewer-name">
+                      Alex M.
+                      <span class="reviewer-badge">✓</span>
+                    </div>
+                    <div class="review-date">Posted on August 15, 2023</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 0 0 .95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.89a1 1 0 0 0-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.97-2.89a1 1 0 0 0-1.176 0l-3.97 2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 0 0-.364-1.118L2.08 10.1c-.783-.57-.38-1.81.588-1.81h4.905a1 1 0 0 0 .95-.69l1.518-4.674z" />
+                </svg>
+              </div>
+              <p class="review-text">
+                "The t-shirt exceeded my expectations! The colors are vibrant and the quality is top-notch. Being a
+                UX/UI designer myself, I'm quite picky about aesthetics, and I can't fault this shirt."
+              </p>
+              <div class="review-actions">
+                <span class="review-action"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16"
+                    height="16">
+                    <path d="M14 9V5a3 3 0 0 0-6 0v4"></path>
+                    <path d="M4 9h4l2 11h4l2-11h4"></path>
+                  </svg> Helpful</span>
+                <span class="review-action"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16"
+                    height="16">
+                    <path d="M10 15v4a3 3 0 0 0 6 0v-4"></path>
+                    <path d="M20 15h-4l-2-11h-4l-2 11H4"></path>
+                  </svg> Not helpful</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="load-more-reviews" style="text-align: center; margin-top: 30px;">
+            <button class="btn btn-primary" id="loadMoreReviewsBtn">Load More Reviews</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs Tab -->
+      <div class="tab-content" id="faqs">
+        <h3 style="margin-bottom: 20px;">Frequently Asked Questions</h3>
+        <div style="color: var(--text-light); line-height: 1.8;">
+          <div style="margin-bottom: 20px;">
+            <strong>What sizes are available?</strong>
+            <p>We offer sizes from X-Small to 3X-Large to fit everyone.</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <strong>What is the material composition?</strong>
+            <p>This t-shirt is made from 100% premium cotton for maximum comfort.</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <strong>Is it suitable for sensitive skin?</strong>
+            <p>Yes, the soft fabric makes it suitable for most skin types, including sensitive skin.</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <strong>How do I care for this product?</strong>
+            <p>Machine wash with cold water and tumble dry on low heat. Avoid bleach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="section">
+    <h2 class="section-title">You Might Also Like</h2>
+    <div class="products-grid" id="relatedProducts">
+      <!-- Related products will be dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <h3>Stay Up To Date About Our Latest Offers</h3>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn">Subscribe to Newsletter</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>SHOP.CO</h4>
+        <p>We have clothes that suit your style and which you're proud to wear. From women to men.</p>
+        <div class="footer-social">
+          <button class="social-icon" title="Share">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </button>
+          <button class="social-icon" title="Gallery">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </button>
+          <button class="social-icon" title="Photo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M8 7h.01"></path>
+            </svg>
+          </button>
+          <button class="social-icon" title="Watch">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#career">Career</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#customer-support">Customer Support</a></li>
+          <li><a href="#delivery-details">Delivery Details</a></li>
+          <li><a href="#terms">Terms & Conditions</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>FAQ</h4>
+        <ul>
+          <li><a href="#account">Account</a></li>
+          <li><a href="#manage-deliveries">Manage Deliveries</a></li>
+          <li><a href="#orders">Orders</a></li>
+          <li><a href="#payments">Payments</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#free-ebooks">Free eBooks</a></li>
+          <li><a href="#development-tutorial">Development Tutorial</a></li>
+          <li><a href="#how-to-blog">How to - Blog</a></li>
+          <li><a href="#youtube-playlist">Youtube Playlist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>SHOP.CO © 2000-2024, All Rights Reserved</div>
+      <div class="payment-methods">
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>PayPal</span>
+        <span>Apple Pay</span>
+        <span>Google Pay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../services/api.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+
+</html>

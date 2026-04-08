@@ -1,0 +1,20 @@
+◇ injected env (4) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+🚀 SHOP.CO Server running on http://localhost:3000
+   Health check: http://localhost:3000/api/health
+   Products:     http://localhost:3000/api/products
+
+MongoDB Connected: ac-n2c0gyl-shard-00-01.79bb8sh.mongodb.net
+Signup request: {
+  firstName: 'John',
+  lastName: 'Doe',
+  email: 'johndoe@test.com',
+  password: 'password123'
+}
+Signup error: TypeError: next is not a function
+    at model.<anonymous> (C:\Users\Administrateur\OneDrive - Al Akhawayn University in Ifrane\Desktop\ecommerce-app\server\models\User.js:43:9)
+    at async Kareem.execPre (C:\Users\Administrateur\OneDrive - Al Akhawayn University in Ifrane\Desktop\ecommerce-app\server\node_modules\kareem\index.js:70:24)
+    at async model.$__save (C:\Users\Administrateur\OneDrive - Al Akhawayn University in Ifrane\Desktop\ecommerce-app\server\node_modules\mongoose\lib\model.js:397:5)
+    at async model.save (C:\Users\Administrateur\OneDrive - Al Akhawayn University in Ifrane\Desktop\ecommerce-app\server\node_modules\mongoose\lib\model.js:667:5)
+    at async model.create (C:\Users\Administrateur\OneDrive - Al Akhawayn University in Ifrane\Desktop\ecommerce-app\server\node_modules\mongoose\lib\model.js:2754:5)
+    at async signup (C:\Users\Administrateur\OneDrive - Al Akhawayn University in Ifrane\Desktop\ecommerce-app\server\controllers\authController.js:26:22)
