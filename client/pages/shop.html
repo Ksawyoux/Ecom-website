@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SHOP.CO - Browse the best clothes that match your style. 200+ international brands, 2000+ high-quality products.">
-  <title>SHOP.CO - Shop Best Clothes</title>
+  <title>Shop All Products - WEARIX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,13 +30,13 @@
   <!-- Header -->
   <header>
     <div class="header-main container">
-      <div class="logo">WEARIX</div>
+      <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">WEARIX</a></div>
 
       <nav>
-        <a href="index.html">Shop</a>
-        <a href="#new-arrivals">New Arrivals</a>
-        <a href="#on-sale">On Sale</a>
-        <a href="#brands">Brands</a>
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="index.html#new-arrivals">New Arrivals</a>
+        <a href="index.html#on-sale">On Sale</a>
       </nav>
 
       <div class="header-actions">
@@ -49,68 +49,29 @@
 
         <div class="header-tools">
           <button class="icon-btn" id="cartBtn" title="Cart">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="24" height="24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
             <span class="cart-count" id="cartCount">0</span>
           </button>
-
-
           
           <div id="authSection" class="auth-wrapper">
             <button class="icon-btn" id="userBtn" title="Account">
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="24" height="24">
-                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-               </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
             </button>
-
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-full">
-      <div class="hero-overlay"></div>
-      <div class="hero-container container reveal">
-        <div class="hero-content-centered">
-          
-          <h1 class="reveal reveal-up">Premium wear for modern living</h1>
-          <p class="reveal reveal-up">Discover our new range of soft clothes made for your daily look and your best days with the finest fabrics.</p>
-          <div class="hero-actions-centered reveal reveal-up">
-            <button class="btn btn-white" id="viewCollectionsBtn">Shop Now</button>
-            <button class="btn btn-outline-white" id="contactUsBtn">Contact us</button>
-          </div>
-        </div>
+  <main style="padding-top: 100px;">
+    <!-- Breadcrumbs -->
+    <div class="container" style="margin-bottom: 30px;">
+      <p style="color: var(--text-muted); font-size: 14px;">Home > <span style="color: var(--primary);">Shop</span></p>
+    </div>
 
-
-        <!-- Thumbnail Gallery -->
-        
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories container reveal reveal-up">
-      <div class="category-grid single">
-        <div class="category-card large glass">
-          <img src="../assets/images/hero_background.png" alt="New Season" class="reveal reveal-left">
-          <div class="category-info reveal reveal-right">
-
-            <h3>New Season</h3>
-            <p>Elevated essentials for the modern wardrobe.</p>
-            <a href="shop.html" class="link-btn">Shop All</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="section container reveal reveal-up">
+    <section class="section container">
       <div class="section-header">
-        <h2 class="section-title">Trending Now</h2>
-
+        <h2 class="section-title">All Products</h2>
         <div class="section-actions">
           <button class="filter-toggle-btn">Filters</button>
         </div>
@@ -132,8 +93,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter container glass reveal reveal-up">
-
+    <section class="newsletter container glass">
       <div class="newsletter-content">
         <h3>Join the Wearix Club</h3>
         <p>Subscribe to receive updates, access to exclusive deals, and more.</p>

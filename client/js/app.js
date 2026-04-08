@@ -1,4 +1,4 @@
-Remove-Item -LiteralPath ".\nul"/**
+/**
  * Main App Module
  * Central initialization and global utilities
  */
@@ -18,7 +18,10 @@ class ShopApp {
     this.setupGlobalEventListeners();
     this.detectPageType();
     this.addGlobalStyles();
+    this.initScrollReveal();
+    this.initSearchAnimation();
   }
+
 
   /**
    * Check authentication status
@@ -56,14 +59,18 @@ class ShopApp {
    * Render header login/signup or initials based on auth state
    */
   renderHeaderActions() {
-    const headerActions = document.getElementById('headerActions');
-    if (!headerActions) return;
+    const authSection = document.getElementById('authSection');
+    if (!authSection) return;
 
     if (this.isLoggedIn && this.user) {
       const initials = (this.user.firstName?.charAt(0) || 'U') + (this.user.lastName?.charAt(0) || '');
-      headerActions.innerHTML = `
-        <button class="user-badge" title="Logged in as ${this.user.firstName} ${this.user.lastName}">${initials.toUpperCase()}</button>
-        <button class="nav-btn" id="logoutBtn">Logout</button>
+      authSection.innerHTML = `
+        <div class="auth-btns">
+          <button class="user-badge" title="Logged in as ${this.user.firstName} ${this.user.lastName}">${initials.toUpperCase()}</button>
+          <button class="icon-btn" id="logoutBtn" title="Logout">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" /></svg>
+          </button>
+        </div>
       `;
       const logoutBtn = document.getElementById('logoutBtn');
       logoutBtn?.addEventListener('click', () => {
@@ -71,9 +78,11 @@ class ShopApp {
         window.location.reload();
       });
     } else {
-      headerActions.innerHTML = `
-        <button class="nav-btn" id="loginActionBtn">Login</button>
-        <button class="nav-btn" id="signupActionBtn">Sign Up</button>
+      authSection.innerHTML = `
+        <div class="auth-btns">
+          <button class="nav-btn" id="loginActionBtn" style="border: none; background: transparent; padding: 0;">Login</button>
+          <button class="nav-btn" id="signupActionBtn">Sign Up</button>
+        </div>
       `;
       document.getElementById('loginActionBtn')?.addEventListener('click', () => {
         window.location.href = 'login.html';
@@ -133,9 +142,7 @@ class ShopApp {
    * Setup product detail page
    */
   setupProductPage() {
-    document.addEventListener('DOMContentLoaded', () => {
-      this.loadProductDetails();
-    });
+    this.loadProductDetails();
   }
 
   /**
@@ -153,7 +160,9 @@ class ShopApp {
     try {
       const product = await API.getMockProductById(productId);
       this.renderProductDetails(product);
+      this.initProductInteractions();
     } catch (error) {
+
       console.error('Error loading product:', error);
       this.showNotification('Failed to load product details', 'error');
     }
@@ -183,13 +192,22 @@ class ShopApp {
         thumb.className = 'thumbnail' + (i === 0 ? ' active' : '');
         thumb.innerHTML = `<img src="${product.image}" alt="Product thumbnail">`;
         thumb.addEventListener('click', () => {
+          if (thumb.classList.contains('active')) return;
+          
           document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
           thumb.classList.add('active');
-          mainImage.src = product.image;
+          
+          // Smooth image switch
+          mainImage.style.opacity = '0';
+          setTimeout(() => {
+            mainImage.src = product.image;
+            mainImage.style.opacity = '1';
+          }, 200);
         });
         thumbnailsContainer.appendChild(thumb);
       }
     }
+
 
     // Update pricing
     const discount = product.originalPrice
@@ -485,7 +503,106 @@ class ShopApp {
       setTimeout(() => notification.remove(), 300);
     }, 3000);
   }
+
+  /**
+   * Initialize scroll reveal animations
+   */
+  initScrollReveal() {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Once revealed, we can stop observing this element
+          // observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Initial check for elements already in view
+    setTimeout(() => {
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('active');
+            }
+        });
+    }, 100);
+  }
+
+  /**
+   * Initialize search bar focus animation
+   */
+  initSearchAnimation() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBar = searchInput?.closest('.search-bar');
+    
+    if (searchInput && searchBar) {
+      searchInput.addEventListener('focus', () => {
+        searchBar.style.width = '110%';
+      });
+      
+      searchInput.addEventListener('blur', () => {
+        searchBar.style.width = '';
+      });
+    }
+  }
+
+  /**
+   * Initialize product-specific interactions
+   */
+  initProductInteractions() {
+    // Quantity logic
+    const decreaseBtn = document.getElementById('decreaseQty');
+    const increaseBtn = document.getElementById('increaseQty');
+    const qtyInput = document.getElementById('quantityInput');
+
+    if (decreaseBtn && increaseBtn && qtyInput) {
+      decreaseBtn.addEventListener('click', () => {
+        const val = parseInt(qtyInput.value);
+        if (val > 1) qtyInput.value = val - 1;
+      });
+
+      increaseBtn.addEventListener('click', () => {
+        const val = parseInt(qtyInput.value);
+        qtyInput.value = val + 1;
+      });
+    }
+
+    // Add to cart main button
+    const addToCartMainBtn = document.getElementById('addToCartBtn');
+    if (addToCartMainBtn) {
+      addToCartMainBtn.addEventListener('click', () => {
+        const productTitle = document.getElementById('productTitle').textContent;
+        const price = document.getElementById('currentPrice').textContent.replace('$', '');
+        const image = document.getElementById('galleryMainImage').src;
+        const quantity = parseInt(document.getElementById('quantityInput')?.value || 1);
+
+        if (window.cartHandler) {
+          window.cartHandler.addItem({
+            id: Date.now(), // Mock ID for now if not available
+            name: productTitle,
+            price: parseFloat(price),
+            image: image,
+            quantity: quantity,
+          });
+          this.showNotification(`${productTitle} added to cart!`, 'success');
+        }
+      });
+    }
+  }
 }
+
+
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

@@ -76,11 +76,18 @@ class ProductsHandler {
       paginationContainer.addEventListener('click', (e) => this.handlePagination(e));
     }
 
-    // Shop Now button
+    // Shop Now / See all collections button
     const shopNowBtn = document.getElementById('shopNowBtn');
     if (shopNowBtn) {
       shopNowBtn.addEventListener('click', () => {
         document.querySelector('.products-grid').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    const viewCollectionsBtn = document.getElementById('viewCollectionsBtn');
+    if (viewCollectionsBtn) {
+      viewCollectionsBtn.addEventListener('click', () => {
+        window.location.href = 'shop.html';
       });
     }
 
